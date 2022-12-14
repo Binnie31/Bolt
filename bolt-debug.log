@@ -1,0 +1,13 @@
+2022-12-13T12:25:13.078188 INFO   [main] [Bolt::Logger] Loaded project from '/root/project'
+2022-12-13T12:25:13.212382 DEBUG  [main] [Bolt::Executor] Started with 100 max thread(s)
+2022-12-13T12:25:14.415547 DEBUG  [main] [Bolt::PAL] Loading modules from /opt/puppetlabs/bolt/lib/ruby/gems/2.7.0/gems/bolt-3.26.2/bolt-modules:/root/project/modules:/root/project/.modules:/opt/puppetlabs/bolt/lib/ruby/gems/2.7.0/gems/bolt-3.26.2/modules
+2022-12-13T12:25:14.417159 DEBUG  [main] [Bolt::Inventory] Loaded inventory from /root/project/inventory.yaml
+2022-12-13T12:25:14.772960 DEBUG  [main] [Bolt::Inventory::Inventory] Did not find config for localhost in inventory
+2022-12-13T12:25:14.773764 DEBUG  [main] [Bolt::Executor] Started with 1 max thread(s)
+2022-12-13T12:25:14.786999 DEBUG  [exec-worker-1] [Bolt::Transport::Local] Running task 'yaml::resolve_reference' on localhost
+2022-12-13T12:25:15.254738 INFO   [event-publisher] [Bolt::Outputter::Logger] Starting: command 'cat /etc/bt-myname' on pmx-dev1-es02
+2022-12-13T12:25:15.690883 INFO   [exec-worker-1] [Bolt::Executor] Running command 'cat /etc/bt-myname' on ["pmx-dev1-es02"]
+2022-12-13T12:25:15.691163 DEBUG  [exec-worker-1] [Bolt::Transport::SSH] Running command 'cat /etc/bt-myname' on pmx-dev1-es02
+2022-12-13T12:25:15.699216 DEBUG  [exec-worker-1] [pmx-dev1-es02] Disabling use_agent in net-ssh: ssh-agent is not available
+2022-12-13T12:25:18.889411 INFO   [exec-worker-1] [Bolt::Executor] {"target":"pmx-dev1-es02","action":"command","object":"cat /etc/bt-myname","status":"success","value":{"stdout":"pmx-dev1-es02\n","stderr":"","merged_output":"pmx-dev1-es02\n","exit_code":0}}
+2022-12-13T12:25:18.889996 INFO   [event-publisher] [Bolt::Outputter::Logger] Finished: command 'cat /etc/bt-myname' with 0 failures in 3.64 sec

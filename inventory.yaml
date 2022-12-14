@@ -1,0 +1,18 @@
+
+groups:
+  # - _plugin: yaml
+  #   filepath: Inventory_files/dev-99.yaml
+
+
+  # - _plugin: yaml
+  #   filepath: Inventory_files/core.yaml
+  
+  - _plugin: yaml
+    filepath: Inventory_files/Elastic-search.yaml
+
+  # - _plugin: yaml
+  #   filepath: Inventory_files/pgdb.yaml
+
+
+
+

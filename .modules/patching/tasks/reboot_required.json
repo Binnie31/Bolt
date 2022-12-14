@@ -1,0 +1,20 @@
+{
+  "description": "Checks if a reboot is pending",
+  "implementations": [
+    {
+      "name": "reboot_required_linux.sh",
+      "requirements": ["shell"],
+      "files": [
+        "patching/files/bash/os_test.sh",
+        "patching/files/bash/reboot_required_rh.sh",
+        "patching/files/bash/reboot_required_deb.sh",
+        "patching/files/bash/reboot_required_sles.sh"
+      ]
+    },
+    {
+      "name": "reboot_required_windows.ps1",
+      "requirements": ["powershell"],
+      "files": ["patching/files/powershell/TaskUtils.ps1"]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+name: CoreServers
+groups:
+  # - name: PMX-DEV1
+  #   targets:
+  #     - uri: 10.226.64.162 
+  #       name: pmx-dev1-es02  
+  # - name: PMX-DEV2
+  #   targets:
+  #     - uri: 10.226.64.134 
+  #       name: pmx-dev2-es02
+  # - name: PMX-DEV5
+  #   targets:
+  #     - uri: 10.226.64.180 
+  #       name: pmx-dev5-es01
+  #     - uri: 10.226.64.135 
+  #       name: pmx-dev5-es02
+  # - name: PMX-DEV6
+  #   targets:
+  #     - uri: 10.226.64.195 
+  #       name: pmx-dev6-es01
+  #     - uri: 10.226.64.13 
+  #       name: pmx-dev6-es02
+  # - name: PMX-DEV7
+  #   targets:
+  #     - uri: 10.226.64.48 
+  #       name: pmx-dev7-es02
+  # - name: PMX-DEV8
+  #   targets:
+  #     - uri: 10.226.64.49 
+  #       name: pmx-dev8-es02
+        
+  # - name: PMX-PF2
+  #   targets:
+  #     - uri: 10.226.64.51
+  #       name: pmx-pf2-es04
+  #     - uri: 10.226.64.50
+  #       name: pmx-pf2-es05
+  #     - uri: 10.226.64.56
+  #       name: pmx-pf2-es06
+        
+  - name: PMX-QA1
+    targets:
+      - uri: 10.226.63.169
+        name: pmx-qa1-core03
+      - uri: 10.226.63.113 
+        name: pmx-qa1-core04
+  - name: PMX-QA2
+    targets:
+      - uri: 10.226.63.221 
+        name: pmx-qa2-core02
+  - name: PMX-QA3
+    targets:
+      - uri: 10.226.63.232
+        name: pmx-qa3-core02
+  # - name: PMX-QA4
+  #   targets:
+  #     - uri: 10.226.63.233
+  #       name: pmx-qa4-core03
+  - name: PMX-QA5
+    targets:
+      - uri: 10.226.63.119
+        name: pmx-qa5-core01
+      - uri: 10.226.63.53 
+        name: pmx-qa5-core02
+      - uri: 10.226.63.222
+        name: pmx-qa5-core03
+      - uri: 10.226.63.227 
+        name: pmx-qa5-core04
+  - name: PMX-QA6
+    targets:
+      - uri: 10.226.63.83 
+        name: pmx-qa6-core01
+      - uri: 10.226.63.115 
+        name: pmx-qa6-core02
+      - uri: 10.226.63.217 
+        name: pmx-qa6-core03
+      - uri: 10.226.63.234 
+        name: pmx-qa6-core04
+  - name: PMX-QA7
+    targets:
+      - uri: 10.226.63.82 
+        name: pmx-qa7-core01
+      # - uri: 10.226.63.85 
+      #   name: pmx-qa7-core02
+      - uri: 10.226.63.223 
+        name: pmx-qa7-core03
+      - uri: 10.226.63.224 
+        name: pmx-qa7-core04
+  - name: PMX-QA8
+    targets:
+      # - uri: 10.226.63.160
+      #   name: pmx-qa8-core01
+      - uri: 10.226.63.235 
+        name: pmx-qa8-core02
+  # - name: PMX-QA9
+  #   targets:
+  #     - uri: 10.226.63.236
+  #       name: pmx-qa9-core01
+        
+  
+config:
+  transport: ssh
+  ssh:
+  # user: 
+  #   _plugin: prompt
+  #   message: user name
+  # password: 
+  #     _plugin: prompt
+  #     message: Enter SSH password
+    user: Binamra.thapa
+    password: B0tt0mline51$$
+    host-key-check: false
+    run-as: root

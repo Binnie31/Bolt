@@ -1,0 +1,43 @@
+name: cluster1
+groups:
+  - name: pgdb
+    targets:
+      - uri: 10.226.64.179 #should be edited
+        name: pgdb01
+        # alias: postgresdb_56
+      - uri: 10.226.64.183
+        name: pgdb02
+      - uri: 10.226.64.180
+        name: pgdb03        
+  - name: etcd
+    targets:
+      - uri: 10.226.64.172
+        name: etcd01
+      - uri: 10.226.64.170
+        name: etcd02
+      - uri: 10.226.64.176
+        name: etcd03
+  - name: haproxy
+    targets:
+      - uri: 10.226.64.187
+        name: haproxy01
+      - uri: 10.226.64.186
+        name: haproxy02
+  - name: backrest
+    targets:
+      - uri: 10.226.64.188  
+        name: backrest01
+  
+config:
+  transport: ssh
+  ssh:
+  # user: 
+  #   _plugin: prompt
+  #   message: user name
+  # password: 
+  #     _plugin: prompt
+  #     message: Enter SSH password
+    user: Binamra.thapa
+    password: B0tt0mline51$$
+    host-key-check: false
+    run-as: root

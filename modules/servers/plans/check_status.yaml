@@ -1,0 +1,15 @@
+steps:
+
+  - name: checking_status
+    task: service        
+    parameters:
+      name: etcd.service
+      action: status       ## start/stop/restart/enable/disable/status
+    targets: etcd01
+  
+  
+    
+  - message: $checking_status.ok
+  - message: $checking_status.results
+  - message: $checking_status.count
+  # - message: $checking_status.target

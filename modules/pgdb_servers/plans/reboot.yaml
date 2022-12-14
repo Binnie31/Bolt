@@ -1,0 +1,17 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+steps:
+  - name: reboot
+    plan: reboot
+    targets: $targets
+  - message: The target has been rebooted.
+  
+  # - name: start_service
+  #   task: service
+  #   parameters:
+  #     name: postgresql-11
+  #     action: status
+  #   targets: $targets
+  # - message: Postgresql-11 service has been started.

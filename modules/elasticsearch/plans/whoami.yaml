@@ -1,0 +1,8 @@
+parameters:
+  targets:
+    type: TargetSpec
+    
+    
+steps:
+  - command: "cat /etc/bt-myname"
+    targets: $targets

@@ -1,0 +1,14 @@
+pmx-dev1-es02
+pmx-dev2-es02
+pmx-dev5-es02
+pmx-dev6-es02
+pmx-dev7-es02
+pmx-dev8-es02
+pmx-pf2-es04
+pmx-pf2-es05
+pmx-pf2-es06
+pmx-qa1-es02
+pmx-qa2-es02
+pmx-qa3-es02
+pmx-qa5-es02
+pmx-qa8-es02

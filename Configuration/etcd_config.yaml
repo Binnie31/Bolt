@@ -1,0 +1,8 @@
+- uri: 10.226.64.172
+  name: etcd01
+
+- uri: 10.226.64.170
+  name: etcd02
+  
+- uri: 10.226.64.176
+  name: etcd03

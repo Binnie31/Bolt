@@ -1,0 +1,14 @@
+- name: pilot
+  targets:
+    - _plugin: puppetdb
+      query: "inventory[certname] { facts.pilots = 'pilot' }"
+      target_mapping:
+        uri: facts.az_metadata.network.interface.0.ipv4.ipAddress.0.publicIpAddress
+        config:
+          ssh:
+            user: facts.hostname
+  config:
+    transport: ssh
+    ssh:
+      private-key: /etc/puppetlabs/puppetserver/ssh/gitlab
+      host-key-check: false

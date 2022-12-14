@@ -1,0 +1,15 @@
+steps: 
+    
+  - name: rebooting_backrest
+    plan: servers::backrest
+
+  - name: rebooting_etcd
+    plan: servers::etcd
+
+  - name: rebooting_haproxy
+    plan: servers::haproxy
+
+  - name: rebooting_pgdb
+    plan: servers::pgdb
+    
+  - message: rebooting of the entire cluster has been completed..

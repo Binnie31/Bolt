@@ -1,0 +1,22 @@
+parameters:
+  targets:
+    type: TargetSpec
+ 
+# Command takes 3.65 sec , script takes 9.92 sec.
+steps:
+  - command: env=$( cd /paymodeNFS; echo * | awk '{print $1}') ; 
+             echo "This file is created by bolt on $(date) for rebooting $(cat /etc/bt-myname)" > 
+             /paymodeNFS/$env/ftp/hold/semaphore/$(cat /etc/bt-myname)
+    targets: $targets       
+    
+  - name: reboot
+    plan: reboot
+    targets: $targets
+    description: Rebooting core servers   
+    
+  - command: env=$( cd /paymodeNFS; echo * | awk '{print $1}') ;
+             rm /paymodeNFS/$env/ftp/hold/semaphore/$(cat /etc/bt-myname) -f
+    targets: $targets
+    
+  - command: cd /usr/local/pushgateway ; ./service.sh start
+    targets: $targets

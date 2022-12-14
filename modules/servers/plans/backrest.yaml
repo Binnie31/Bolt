@@ -1,0 +1,16 @@
+# parameters:
+#   targets:
+#     type: TargetSpec
+steps:
+  - name: scriptfile
+    script: servers/backrest_cron.sh
+    targets: backrest01
+    description: "checking for cron jobs..."
+    
+  - message: no cron jobs are running.
+  
+  - name: reboot_backrest
+    plan: reboot
+    targets: backrest01
+    
+  - message: backrest server has been rebooted sucessfully.

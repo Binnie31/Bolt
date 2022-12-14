@@ -1,0 +1,34 @@
+parameters:
+  t: 
+    type: Array[TargetSpec]
+
+steps:
+
+  # - name: reboot_ha
+  #   plan: reboot
+  #   targets: $t
+
+  - name: reboot_haproxy01
+    plan: reboot
+    targets: $t[0]
+  # - name: service_status_haproxy_01
+  #   task: service
+  #   parameters:
+  #     name: haproxy
+  #     action: start
+  #   targets: haproxy01
+  #   description: "Starting  haproxy01 service...."
+  - message: haproxy01 server has been rebooted and the service is up. 
+
+
+  - name: reboot_haproxy02
+    plan: reboot
+    targets: $t[1]
+  # - name: service_status_haproxy_02
+  #   task: service
+  #   parameters:
+  #     name: haproxy
+  #     action: start
+  #   targets: haproxy02
+  #   description: "Starting  haproxy02 service...."  
+  - message: haproxy02 server has been rebooted and the service is up.

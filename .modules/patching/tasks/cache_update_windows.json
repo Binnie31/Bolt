@@ -1,0 +1,14 @@
+{
+  "description": "Updates the targets update cache. For Windows this means a Windows Update refresh.",
+  "supports_noop": true,
+  "private": true,
+  "implementations": [
+    {
+      "name": "cache_update_windows.ps1",
+      "requirements": ["powershell"],
+      "files": ["patching/files/powershell/TaskUtils.ps1"]
+    }
+  ],
+  "parameters": {}
+}
+

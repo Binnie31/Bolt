@@ -1,0 +1,81 @@
+name: ElasticSearch
+groups:
+
+  - name: PMX-PS2
+    targets:
+      - uri: 10.226.66.62
+        name: pmx-ps2-es02
+  - name: PMX-DEV1
+    targets:
+      - uri: 10.226.64.162 
+        name: pmx-dev1-es02  
+  # - name: PMX-DEV2
+  #   targets:
+  #     - uri: 10.226.64.134 
+  #       name: pmx-dev2-es02
+  # - name: PMX-DEV5
+  #   targets:
+  #     - uri: 10.226.64.135 
+  #       name: pmx-dev5-es02
+  # - name: PMX-DEV6
+  #   targets:
+  #     - uri: 10.226.64.13 
+  #       name: pmx-dev6-es02
+  # - name: PMX-DEV7
+  #   targets:
+  #     - uri: 10.226.64.48 
+  #       name: pmx-dev7-es02
+  # - name: PMX-DEV8
+  #   targets:
+  #     - uri: 10.226.64.49 
+  #       name: pmx-dev8-es02
+        
+  # - name: PMX-PF2
+  #   targets:
+  #     - uri: 10.226.64.51
+  #       name: pmx-pf2-es04
+  #     - uri: 10.226.64.50
+  #       name: pmx-pf2-es05
+  #     - uri: 10.226.64.56
+  #       name: pmx-pf2-es06
+        
+  # - name: PMX-QA1
+  #   targets:
+  #     - uri: 10.226.63.11 
+  #       name: pmx-qa1-es02
+  # - name: PMX-QA2
+  #   targets:
+  #     - uri: 10.226.63.13 
+  #       name: pmx-qa2-es02
+  # - name: PMX-QA3
+  #   targets:
+  #     - uri: 10.226.63.29 
+  #       name: pmx-qa3-es02
+  # - name: PMX-QA5
+  #   targets:
+  #     - uri: 10.226.63.56 
+  #       name: pmx-qa5-es02
+  # - name: PMX-QA8
+  #   targets:
+  #     - uri: 10.226.63.67 
+  #       name: pmx-qa8-es02
+        
+  # - name: PMX-PS2
+  #   targets:
+  #     - uri: 10.226.66.62
+  #       name: pmx-ps2-es02
+        
+  
+config:
+  transport: ssh
+  ssh:
+  # user: 
+  #   _plugin: prompt
+  #   message: user name
+  # password: 
+  #     _plugin: prompt
+  #     message: Enter SSH password
+    user: Binamra.thapa
+    password: B0tt0mline51$$
+    host-key-check: false
+    run-as: root

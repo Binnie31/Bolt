@@ -1,0 +1,39 @@
+steps:
+
+  - name: reboot_etcd01
+    plan: reboot
+    targets: etcd01
+  - name: service_status_01
+    task: service
+    parameters:
+      name: etcd.service
+      action: start
+    targets: etcd01
+    description: "Starting etcd01 service...."
+  - message: etcd01 has been rebooted and the service is running.
+
+
+  - name: reboot_etcd02
+    plan: reboot
+    targets: etcd02
+  - name: service_status_02
+    task: service
+    parameters:
+      name: etcd.service
+      action: start
+    targets: etcd02
+    description: "Starting  etcd02 service...."   
+  - message: etcd02 has been rebooted and the service is running.
+
+
+  - name: reboot_ectd03
+    plan: reboot
+    targets: etcd03
+  - name: service_status_03
+    task: service
+    parameters:
+      name: etcd.service
+      action: start
+    targets: etcd03
+    description: "Starting  etcd03 service..."   
+  - message: etcd03 has been rebooted and the service is running.

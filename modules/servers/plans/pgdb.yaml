@@ -1,0 +1,58 @@
+steps:
+  - name: scriptfile_01
+    script: servers/change_leader_03.sh
+    targets: pgdb01
+    description: "checking lag and performing switchover....." 
+  - message: The service has been stopped & switchover has been performed successfully for pgdb01.
+  
+  - name: reboot_01
+    plan: reboot
+    targets: pgdb01
+  - name: service_status_01
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb01
+    description: "Starting  pgdb01 service....."
+  - message: pgdb01 server has been rebooted and the service is up and running.
+    
+    
+    
+  - name: scriptfile_02
+    script: servers/change_leader_03.sh
+    targets: pgdb02
+    description: "checking lag and performing switchover."
+  - message: The service has been stopped & switchover has been performed successfully for pgdb02.
+
+  - name: reboot_02
+    plan: reboot
+    targets: pgdb02
+  - name: service_status_02
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb02 
+    description: "Starting  pgdb02 service...."
+  - message: pgdb02 server has been rebooted and the service is up and running.
+
+
+
+  - name: scriptfile_03
+    script: servers/change_leader_01.sh
+    targets: pgdb03
+    description: "checking lag and performing switchover"
+  - message: The service has been stopped & switchover has been performed successfully for pgdb03.
+
+  - name: reboot_03
+    plan: reboot
+    targets: pgdb03
+  - name: service_status_03
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb03
+    description: "Starting  pgdb03 service...."
+  - message: pgdb03 server has been rebooted and the service is up and running.

@@ -1,0 +1,21 @@
+steps:
+
+  - name: return_value
+    script: servers/return.sh
+    targets: pgdb01
+    
+  - name: service_01
+    task: service
+    parameters:
+      # name: "patroni@${return_value.map | $return_value_result | { $return_value_result['stdout'] }.join(',')}"
+      # name: "patroni@pmx-dev99"
+      action: status
+    targets: pgdb01
+    
+  # - name: hostnames
+  #   command: hostname -f
+  #   targets: pgdb01
+  
+  # - message: $return_value.map |$hostname_result| { $hostname_result['stdout'] }.join(',')
+  # - message: "patroni@${return_value.map | $return_value_result | { $return_value_result['stdout'] }.join(',')}"
+  

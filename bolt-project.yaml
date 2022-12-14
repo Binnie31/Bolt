@@ -1,0 +1,5 @@
+---
+name: project
+modules:
+- encore/patching
+- puppetlabs/terraform

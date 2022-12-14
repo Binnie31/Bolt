@@ -1,0 +1,30 @@
+# parameters:
+#   targetName: 
+#     type: Array[String]
+
+steps:
+
+  - name: reboot_haproxy01
+    plan: reboot
+    targets: haproxy01
+  - name: service_status_haproxy_01
+    task: service
+    parameters:
+      name: haproxy
+      action: start
+    targets: haproxy01
+    description: "Starting  haproxy01 service...."
+  - message: haproxy01 server has been rebooted and the service is up. 
+
+
+  - name: reboot_haproxy02
+    plan: reboot
+    targets: haproxy02
+  - name: service_status_haproxy_02
+    task: service
+    parameters:
+      name: haproxy
+      action: start
+    targets: haproxy02
+    description: "Starting  haproxy02 service...."  
+  - message: haproxy02 server has been rebooted and the service is up.

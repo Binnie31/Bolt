@@ -1,0 +1,14 @@
+{
+  "description": "Updates the targets update cache. For RHEL/CentOS this means a `yum clean expire-cache`. For Debian this means a `apt update`.",
+  "supports_noop": true,
+  "private": true,
+  "implementations": [
+    {
+      "name": "cache_update_linux.sh",
+      "requirements": ["shell"],
+      "files": ["patching/files/bash/os_test.sh"]
+    }
+  ],
+  "parameters": {}
+}
+

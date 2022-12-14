@@ -1,0 +1,111 @@
+steps:
+
+  - name: reboot_backrest
+    plan: reboot
+    targets: backrest
+    description: "rebooting backrest"
+
+
+  - name: reboot_etcd01
+    plan: reboot
+    targets: etcd01
+    description: "rebooting etcd01 completed"
+
+  - name: service_status
+    task: service
+    parameters:
+      name: etcd.service
+      action: start
+    targets: etcd01
+    description: "Service is up and running"
+
+  - name: reboot_etcd02
+    plan: reboot
+    targets: etcd02
+    description: "rebooting etcd02"
+
+  - resources:
+      - type: service
+        title: etcd.service
+        parameters:
+          ensure: running
+    targets: etcd02    
+
+  - name: reboot_ectd03
+    plan: reboot
+    targets: etcd03
+    description: "rebooting etcd03"
+
+  - resources:
+      - type: service
+        title: etcd.service
+        parameters:
+          ensure: running
+    targets: etcd03 
+
+
+
+  - name: reboot_haproxy01
+    plan: reboot
+    targets: haproxy01
+    description: "rebooting haproxy01"
+
+
+  - name: service_status_haproxy_01
+    task: service
+    parameters:
+      name: haproxy
+      action: start
+    targets: haproxy01
+
+
+
+  - name: reboot_haproxy02
+    plan: reboot
+    targets: haproxy02
+    description: "rebooting haproxy02"  
+
+  - name: service_status_haproxy_02
+    task: service
+    parameters:
+      name: haproxy
+      action: start
+    targets: haproxy02
+
+  - name: reboot_01
+    plan: reboot
+    targets: pgdb01
+    description: "rebooting pgdb56"
+
+  - name: service_status_01
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb01
+
+  - name: reboot_02
+    plan: reboot
+    targets: pgdb02
+    description: "rebooting pgdb57"
+
+  - name: service_status_02
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb02 
+
+  - name: reboot_03
+    plan: reboot
+    targets: pgdb03
+    description: "rebooting pgdb58"
+
+
+
+  - name: service_status_03
+    task: service
+    parameters:
+      name: patroni@pmx-dev99
+      action: start
+    targets: pgdb03

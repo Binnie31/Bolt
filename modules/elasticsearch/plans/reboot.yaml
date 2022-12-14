@@ -1,0 +1,29 @@
+parameters:
+  targets:
+    type: TargetSpec
+
+steps:
+  - name: stop_service
+    task: service 
+    parameters:
+      name: elasticsearch.service
+      action: stop
+    targets: $targets
+  - message: "The service for ${targets} has been stopped."
+    
+  - name: rebooting
+    plan: reboot
+    targets: $targets
+    
+  - message: "The server ${targets} has been rebooted."
+    
+  - name: start_service
+    task: service 
+    parameters:
+      name: elasticsearch.service
+      action: start
+    targets: $targets
+    
+  - message: "The service for ${targets} has been started."
+    
+    

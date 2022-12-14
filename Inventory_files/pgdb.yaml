@@ -1,0 +1,88 @@
+name: PGDB
+groups:
+  - name: PMX-DEV0
+    targets:
+      - uri: 10.226.64.196 
+        name: pmx-dev0-pgdb01
+      - uri: 10.226.64.139 
+        name: pmx-dev0-pgdb02
+  - name: PMX-DEV1
+    targets:
+      - uri: 10.226.64.71
+        name: pmx-dev1-pgdb01  
+  - name: PMX-DEV2
+    targets:
+      - uri: 10.226.64.171 
+        name: pmx-dev2-pgdb01
+  - name: PMX-DEV3
+    targets:
+      - uri: 10.226.64.156 
+        name: pmx-dev3-pgdb01
+  - name: PMX-DEV5
+    targets:
+      - uri: 10.226.64.69 
+        name: pmx-dev5-pgdb01
+  - name: PMX-DEV6
+    targets:
+      - uri: 10.226.64.164 
+        name: pmx-dev6-pgdb01
+  - name: PMX-DEV7
+    targets:
+      - uri: 10.226.64.36 
+        name: pmx-dev7-pgdb01
+  - name: PMX-DEV8
+    targets:
+      - uri: 10.226.64.168 
+        name: pmx-dev8-pgdb01
+        
+  - name: PMX-PF2
+    targets:
+      - uri: 10.226.64.173
+        name: pmx-pf2-pgdb01
+      - uri: 10.226.64.146
+        name: pmx-pf2-pgdb02
+        
+  - name: PMX-QA1
+    targets:
+      - uri: 10.226.63.88
+        name: pmx-qa1-pgdb01
+  - name: PMX-QA2
+    targets:
+      - uri: 10.226.63.33 
+        name: pmx-qa2-pgdb05
+  - name: PMX-QA3
+    targets:
+      - uri: 10.226.63.65
+        name: pmx-qa3-pgdb01
+  - name: PMX-QA5
+    targets:
+      - uri: 10.226.63.66
+        name: pmx-qa5-pgdb01
+  - name: PMX-QA6
+    targets:
+      - uri: 10.226.63.75 
+        name: pmx-qa6-pgdb01
+  - name: PMX-QA7
+    targets:
+      - uri: 10.226.63.112
+        name: pmx-qa7-pgbd01
+  - name: PMX-QA8
+    targets:
+      - uri: 10.226.63.114
+        name: pmx-qa8-pgbd01
+        
+        
+  
+config:
+  transport: ssh
+  ssh:
+  # user: 
+  #   _plugin: prompt
+  #   message: user name
+  # password: 
+  #     _plugin: prompt
+  #     message: Enter SSH password
+    user: Binamra.thapa
+    password: B0tt0mline51$$
+    host-key-check: false
+    run-as: root

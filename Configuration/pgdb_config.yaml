@@ -1,0 +1,8 @@
+- uri: 10.226.64.179
+  name: pgdb01
+
+- uri: 10.226.64.183
+  name: pgdb02
+
+- uri: 10.226.64.180
+  name: pgdb03

@@ -1,0 +1,5 @@
+- uri: 10.226.64.187
+  name: haproxy01
+  
+- uri: 10.226.64.186
+  name: haproxy02
